@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="COMPARTAMOS_LOG" value="C:\var\logs\compartamos-banco"/>
+    <property name="COMPARTAMOS_LOG" value="C:\\var\\logs\\compartamos-banco"/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -27,7 +27,24 @@
                 <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
+    </appender>
 
+    <appender name="FILE-APP"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${COMPARTAMOS_LOG}/compartamos.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${COMPARTAMOS_LOG}/archived/compartamos.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
     </appender>
 
     <appender name="FILE-ERROR"
@@ -52,15 +69,15 @@
     </appender>
 
     <logger name="org.springframework" level="debug" additivity="false">
-        <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE-AUDIT"/>
+        <appender-ref ref="STDOUT"/>
     </logger>
 
     <!-- Send logs to both console and file audit -->
     <logger name="mx.com.adea.springex.controllers" level="debug"
             additivity="false">
+        <appender-ref ref="FILE-APP"/>
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILE-AUDIT"/>
     </logger>
 
     <root level="error">

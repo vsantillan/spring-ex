@@ -21,13 +21,13 @@ public class HelloController {
   @RequestMapping(value = "/hola", method = RequestMethod.GET)
   public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
                          String name, Model model) {
+
     model.addAttribute("recipient", name);
     return "hola";
   }
 
   @RequestMapping(value = "/index", method = RequestMethod.GET)
-  public String fecha(@RequestParam(value = "name", required = false, defaultValue = "World")
-                          String name) {
+  public String fecha() {
     logger.debug("WORKS");
     return "index";
   }
