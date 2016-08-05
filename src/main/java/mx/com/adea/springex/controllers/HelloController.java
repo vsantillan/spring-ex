@@ -17,7 +17,6 @@ public class HelloController {
 
   private final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-
   @RequestMapping(value = "/hola", method = RequestMethod.GET)
   public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
                          String name, Model model) {
