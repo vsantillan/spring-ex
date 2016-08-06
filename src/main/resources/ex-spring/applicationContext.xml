@@ -11,11 +11,16 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="mx.com.adea.springex.controllers"/>
+    <context:component-scan base-package="mx.com.adea.springex.dao"/>
     <mvc:annotation-driven/>
 
     <beans:bean id="sessionFactory"
                 class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <beans:property name="configLocation" value="classpath:hibernate.cfg.xml" />
+    </beans:bean>
+
+    <beans:bean id="userDao" class="mx.com.adea.springex.dao.impl.UsuarioDAOImpl">
+        <beans:constructor-arg ref="sessionFactory"/>
     </beans:bean>
 
     <!--
