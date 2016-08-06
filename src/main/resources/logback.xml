@@ -73,6 +73,11 @@
         <appender-ref ref="STDOUT"/>
     </logger>
 
+    <logger name="org.hibernate" level="debug" additivity="false">
+        <appender-ref ref="FILE-AUDIT"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
     <!-- Send logs to both console and file audit -->
     <logger name="mx.com.adea.springex.controllers" level="debug"
             additivity="false">
