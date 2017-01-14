@@ -20,27 +20,28 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-  private final UsuarioDAO userDao;
+	private final UsuarioDAO userDao;
 
-  private final Logger logger = LoggerFactory.getLogger(HelloController.class);
+	private final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-  @Autowired
-  public HelloController(UsuarioDAO userDao) {
-    this.userDao = userDao;
-  }
+	@Autowired
+	public HelloController(UsuarioDAO userDao) {
+		this.userDao = userDao;
+	}
 
-  @RequestMapping(value = "/hola", method = RequestMethod.GET)
-  public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
-                         String name, Model model) {
+	@RequestMapping(value = "/hola", method = RequestMethod.GET)
+	public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
+												 String name, Model model) {
 
-    model.addAttribute("recipient", name);
-    List<UsuarioWebmxEntity> list = userDao.list();
-    return "hola";
-  }
+		model.addAttribute("recipient", name);
+		List<UsuarioWebmxEntity> list = userDao.list();
+		logger.debug(String.valueOf(list.size()));
+		return "hola";
+	}
 
-  @RequestMapping(value = "/index", method = RequestMethod.GET)
-  public String fecha() {
-    logger.debug("WORKS");
-    return "index";
-  }
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String fecha() {
+		logger.debug("WORKS");
+		return "index";
+	}
 }

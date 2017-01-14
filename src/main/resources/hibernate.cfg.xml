@@ -1,28 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <!-- Connection for Oracle -->
-        <!--<property name="connection.url">jdbc:oracle:thin:@slinky.adea.com.mx:1521:SLINKY</property>-->
-        <!--<property name="connection.driver_class">oracle.jdbc.OracleDriver</property>-->
-        <!--<property name="connection.username">visantillan</property>-->
-        <!--<property name="connection.password">S6Up7EwJ</property>-->
-        <!--<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>-->
-        <!-- Connection for MySQL -->
-        <property name="connection.url">jdbc:mysql://localhost:3306/world</property>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.username">visantillan</property>
-        <property name="connection.password">qwerty</property>
-        <property name="hibernate.connection.verifyServerCertificate">false</property>
-        <property name="hibernate.connection.requireSSL">false</property>
-        <mapping class="mx.com.adea.springex.beans.CityEntity"/>
-        <mapping class="mx.com.adea.springex.beans.CountryEntity"/>
-        <mapping class="mx.com.adea.springex.beans.CountrylanguageEntity"/>
-        <mapping class="mx.com.adea.springex.beans.UsuarioWebmxEntity"/>
-        <!-- DB schema will be updated if needed -->
-        <!--<property name="hbm2ddl.auto">update</property> -->
-    </session-factory>
+  <session-factory>
+    <!-- Connection for Oracle -->
+    <property name="connection.url">jdbc:oracle:thin:@slinky.adea.com.mx:1521:SLINKY</property>
+    <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="connection.username">visantillan</property>
+    <property name="connection.password">C1nthy4*1011</property>
+    <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    <!-- DB schema will be updated if needed -->
+    <!--<property name="hbm2ddl.auto">update</property> -->
+
+    <!-- Mapping Entities -->
+    <mapping class="mx.com.adea.springex.beans.UsuarioWebmxEntity"/>
+  </session-factory>
 </hibernate-configuration>

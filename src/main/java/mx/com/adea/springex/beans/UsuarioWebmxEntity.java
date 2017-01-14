@@ -8,7 +8,7 @@ import java.sql.Date;
  * visantillan@adeamexico.com.mx
  */
 @Entity
-@Table(name = "usuario_webmx", schema = "world", catalog = "")
+@Table(name = "usuario_webmx", schema = "mexweb")
 public class UsuarioWebmxEntity {
   private String login;
   private String password;
