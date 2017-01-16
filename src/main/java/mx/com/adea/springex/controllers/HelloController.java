@@ -20,10 +20,14 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-	@Autowired
-	private EmployeeDao employeeDao;
+	private final EmployeeDao employeeDao;
 
 	private final Logger logger = LoggerFactory.getLogger(HelloController.class);
+
+	@Autowired
+	public HelloController(EmployeeDao employeeDao) {
+		this.employeeDao = employeeDao;
+	}
 
 	@RequestMapping(value = "/hola", method = RequestMethod.GET)
 	public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
@@ -33,7 +37,7 @@ public class HelloController {
 
 		if (employees != null) {
 			for(EmployeesEntity employeesEntity: employees) {
-				System.out.println(employeesEntity.getFirstName());
+				logger.debug(employeesEntity.getFirstName());
 			}
 		}
 

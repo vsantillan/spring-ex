@@ -19,7 +19,7 @@
         <beans:property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </beans:bean>
 
-    <beans:bean id="emplployeeDao" class="mx.com.adea.springex.dao.impl.EmployeeDaoImpl">
+    <beans:bean id="employeeDao" class="mx.com.adea.springex.dao.impl.EmployeeDaoImpl">
         <beans:constructor-arg ref="sessionFactory"/>
     </beans:bean>
 

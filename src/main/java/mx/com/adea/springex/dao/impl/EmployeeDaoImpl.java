@@ -21,7 +21,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Override
 	public List<EmployeesEntity> listEmployees() {
 		Session session = this.sessionFactory.openSession();
-		List<EmployeesEntity> employeesList = session.createQuery("from EmployeesEntity ").list();
-		return employeesList;
+		return (List<EmployeesEntity>) session.createQuery("from EmployeesEntity ").list();
 	}
 }
