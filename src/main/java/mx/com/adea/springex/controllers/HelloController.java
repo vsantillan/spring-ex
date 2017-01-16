@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController {
 
-  private final Logger logger = LoggerFactory.getLogger(HelloController.class);
+	private final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
-  @RequestMapping(value = "/hola", method = RequestMethod.GET)
-  public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
-                         String name, Model model) {
+	@RequestMapping(value = "/hola", method = RequestMethod.GET)
+	public String hola(@RequestParam(value = "name", required = false, defaultValue = "World")
+												 String name, Model model) {
+		logger.debug(name);
+		model.addAttribute("recipient", name);
+		return "hola";
+	}
 
-    model.addAttribute("recipient", name);
-    return "hola";
-  }
-
-  @RequestMapping(value = "/index", method = RequestMethod.GET)
-  public String fecha() {
-    logger.debug("WORKS");
-    return "index";
-  }
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String fecha() {
+		logger.debug("WORKS");
+		return "index";
+	}
 }

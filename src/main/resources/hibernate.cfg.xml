@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Connection for Oracle -->
-        <property name="connection.url">jdbc:postgresql://localhost/postgres</property>
+        <property name="connection.url">jdbc:postgresql://localhost/dvdrental</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.username">visantillan</property>
         <property name="connection.password">qwerty00</property>
