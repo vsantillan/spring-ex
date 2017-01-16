@@ -19,9 +19,9 @@
         <beans:property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </beans:bean>
 
-    <!--<beans:bean id="userDao" class="mx.com.adea.springex.dao.impl.UsuarioDAOImpl">-->
-        <!--<beans:constructor-arg ref="sessionFactory"/>-->
-    <!--</beans:bean>-->
+    <beans:bean id="emplployeeDao" class="mx.com.adea.springex.dao.impl.EmployeeDaoImpl">
+        <beans:constructor-arg ref="sessionFactory"/>
+    </beans:bean>
 
     <!--
         CSRF protection. Here we only include the CsrfFilter instead of all of Spring Security.
