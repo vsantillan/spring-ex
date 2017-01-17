@@ -10,8 +10,8 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="mx.com.adea.springex.controllers"/>
-    <!--<context:component-scan base-package="mx.com.adea.springex.dao"/>-->
+    <context:component-scan base-package="mx.com.adea.projects.controllers"/>
+    <!--<context:component-scan base-package="mx.com.adea.projects.dao"/>-->
     <mvc:annotation-driven/>
 
     <beans:bean id="sessionFactory"
@@ -19,7 +19,7 @@
         <beans:property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </beans:bean>
 
-    <beans:bean id="employeeDao" class="mx.com.adea.springex.dao.impl.EmployeeDaoImpl">
+    <beans:bean id="employeeDao" class="mx.com.adea.projects.dao.impl.EmployeeDaoImpl">
         <beans:constructor-arg ref="sessionFactory"/>
     </beans:bean>
 

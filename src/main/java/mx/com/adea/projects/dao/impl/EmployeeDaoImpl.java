@@ -1,14 +1,13 @@
-package mx.com.adea.springex.dao.impl;
+package mx.com.adea.projects.dao.impl;
 
-import mx.com.adea.springex.dao.EmployeeDao;
-import mx.com.adea.springex.pojos.EmployeesEntity;
+import mx.com.adea.projects.dao.EmployeeDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
 
 /**
- * Created by viktor on 15/01/2017.
+ * Creado por viktor on 15/01/2017.
  */
 public class EmployeeDaoImpl implements EmployeeDao{
 
@@ -19,8 +18,8 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	}
 
 	@Override
-	public List<EmployeesEntity> listEmployees() {
+	public List<String> listEmployees() {
 		Session session = this.sessionFactory.openSession();
-		return (List<EmployeesEntity>) session.createQuery("from EmployeesEntity ").list();
+		return null;
 	}
 }

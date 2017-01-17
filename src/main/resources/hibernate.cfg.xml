@@ -1,38 +1,33 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <!-- Connection for Oracle -->
-        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
-        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
-        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
-        <property name="connection.username">visantillan</property>
-        <property name="connection.password">qwerty01</property>
-        <property name="show_sql">true</property>
+  <session-factory>
+    <!-- Connection for Oracle -->
+    <property name="connection.url">jdbc:oracle:thin:@slinky.adea.com.mx:1521:slinky</property>
+    <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    <property name="connection.username">visantillan</property>
+    <property name="connection.password">C1nthy4*1011</property>
+    <property name="show_sql">true</property>
 
-        <mapping class="mx.com.adea.springex.pojos.CountriesEntity"/>
-        <mapping class="mx.com.adea.springex.pojos.DepartmentsEntity"/>
-        <mapping class="mx.com.adea.springex.pojos.EmployeesEntity"/>
-        <mapping class="mx.com.adea.springex.pojos.JobsEntity"/>
-        <mapping class="mx.com.adea.springex.pojos.JobHistoryEntity"/>
-        <mapping class="mx.com.adea.springex.pojos.LocationsEntity"/>
-        <mapping class="mx.com.adea.springex.pojos.RegionsEntity"/>
+    <!-- DB schema will be updated if needed -->
+    <!--<property name="hbm2ddl.auto">update</property> -->
 
-        <!-- Connection for MySQL -->
-        <!--<property name="connection.url">jdbc:mysql://localhost:3306/world</property>-->
-        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
-        <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
-        <!--<property name="connection.username">visantillan</property>-->
-        <!--<property name="connection.password">qwerty</property>-->
-        <!--<property name="hibernate.connection.verifyServerCertificate">false</property>-->
-        <!--<property name="hibernate.connection.requireSSL">false</property>-->
-        <!--<mapping class="mx.com.adea.springex.beans.CityEntity"/>-->
-        <!--<mapping class="mx.com.adea.springex.beans.CountryEntity"/>-->
-        <!--<mapping class="mx.com.adea.springex.beans.CountrylanguageEntity"/>-->
-        <!--<mapping class="mx.com.adea.springex.beans.UsuarioWebmxEntity"/>-->
-        <!-- DB schema will be updated if needed -->
-        <!--<property name="hbm2ddl.auto">update</property> -->
-    </session-factory>
+    <mapping class="mx.com.adea.projects.pojos.MgmtAplicacionDatosEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtCatPantEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtCatRevErrEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtCatalogoErroresEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtDocumentosEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtEntregaEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtMatrizPruebasEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtObservacionesEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtPantallasEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtPublicacionEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtRevisionEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtRevisionesEntity"/>
+    <mapping class="mx.com.adea.projects.pojos.MgmtSolicitudEntity"/>
+
+  </session-factory>
 </hibernate-configuration>
