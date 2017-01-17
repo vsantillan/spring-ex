@@ -75,11 +75,11 @@ target/
 
 #ExtJS Compiled Sources
 
-/src/main/webapp/classic.jsonp
-/src/main/webapp/cache.appcache
-/src/main/webapp/microloader.jsp
-/src/main/webapp/classic.json
-/src/main/webapp/index.html
-/src/main/webapp/archive/
-/src/main/webapp/classic/
-/src/main/webapp/resources/
+src/main/webapp/classic.jsonp
+src/main/webapp/cache.appcache
+src/main/webapp/microloader.jsp
+src/main/webapp/classic.json
+src/main/webapp/index.html
+src/main/webapp/archive/
+src/main/webapp/classic/
+src/main/webapp/resources/
