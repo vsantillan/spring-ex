@@ -83,3 +83,4 @@ src/main/webapp/index.html
 src/main/webapp/archive/
 src/main/webapp/classic/
 src/main/webapp/resources/
+/src/main/webapp/classic.json

@@ -4,6 +4,7 @@ import mx.com.adea.projects.beans.Greeting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +22,8 @@ public class HelloController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
-	@RequestMapping("/greeting.action")
+	@RequestMapping(value = "/greeting.action", method = RequestMethod.POST)
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(),
-				String.format(template, name));
+		return new Greeting(counter.incrementAndGet(),  String.format(template, name));
 	}
 }
