@@ -2,6 +2,7 @@ package mx.com.adea.projects.controllers;
 
 import mx.com.adea.projects.beans.Greeting;
 import mx.com.adea.projects.dao.AplicacionDao;
+import mx.com.adea.projects.pojos.ApAplicacionDatosEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -22,7 +24,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @RequestMapping("users")
 public class HelloController {
 
-	private final AplicacionDao aplicacionDao;
+	private final AplicacionDao dao;
 
 	private final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
@@ -31,12 +33,17 @@ public class HelloController {
 
 	@Autowired
 	public HelloController(AplicacionDao aplicacionDao) {
-		this.aplicacionDao = aplicacionDao;
+		this.dao = aplicacionDao;
 	}
 
 	@RequestMapping(value = "/greeting.action", method = RequestMethod.GET, produces = "application/json")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	}
+
+	@RequestMapping(value = "/getAllProjects.action")
+	public List<ApAplicacionDatosEntity> getProjects() {
+		return dao.listAplicaciones();
 	}
 
 	@RequestMapping(value = "/aplicacion.action", produces = "application/json")
@@ -52,7 +59,7 @@ public class HelloController {
 		return greeting;
 	}
 
-	@RequestMapping(value = "/testmap.action", method = RequestMethod.GET)
+	@RequestMapping(value = "/testmap.action")
 	public Map<String, ?> testMap(@RequestParam(value = "name", defaultValue = "World") String name) {
 		Map<String, Greeting> map = new HashMap<>();
 

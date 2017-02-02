@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-    "-//Hibernate/Hibernate Configuration DTD//EN"
-    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+		"-//Hibernate/Hibernate Configuration DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
     <!-- Connection for Oracle -->
@@ -15,19 +15,19 @@
     <!-- DB schema will be updated if needed -->
     <!--<property name="hbm2ddl.auto">update</property> -->
 
-    <mapping class="mx.com.adea.projects.pojos.MgmtAplicacionDatosEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtCatPantEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtCatRevErrEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtCatalogoErroresEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtDocumentosEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtEntregaEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtMatrizPruebasEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtObservacionesEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtPantallasEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtPublicacionEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtRevisionEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtRevisionesEntity"/>
-    <mapping class="mx.com.adea.projects.pojos.MgmtSolicitudEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApAplicacionDatosEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApCatalogoErroresEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApCatPantEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApCatRevErrEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApDocumentosEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApEntregaEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApMatrizPruebasEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApObservacionesEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApPantallasEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApPublicacionEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApRevisionEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApRevisionesEntity"/>
+		<mapping class="mx.com.adea.projects.pojos.ApSolicitudEntity"/>
 
-  </session-factory>
+	</session-factory>
 </hibernate-configuration>

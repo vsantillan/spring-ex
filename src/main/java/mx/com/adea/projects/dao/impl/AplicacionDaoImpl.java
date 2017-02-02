@@ -2,7 +2,7 @@ package mx.com.adea.projects.dao.impl;
 
 import mx.com.adea.projects.beans.Greeting;
 import mx.com.adea.projects.dao.AplicacionDao;
-import mx.com.adea.projects.pojos.MgmtAplicacionDatosEntity;
+import mx.com.adea.projects.pojos.ApAplicacionDatosEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -27,7 +27,7 @@ public class AplicacionDaoImpl implements AplicacionDao {
 
 
 	@Override
-	public Greeting save(MgmtAplicacionDatosEntity mgmtAplicacionDatosEntity) {
+	public Greeting save(ApAplicacionDatosEntity mgmtAplicacionDatosEntity) {
 		Session session = this.sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		session.save(mgmtAplicacionDatosEntity);
@@ -36,12 +36,12 @@ public class AplicacionDaoImpl implements AplicacionDao {
 	}
 
 	@Override
-	public MgmtAplicacionDatosEntity getAplicacionById() {
+	public ApAplicacionDatosEntity getAplicacionById() {
 		return null;
 	}
 
 	@Override
-	public List<MgmtAplicacionDatosEntity> listAplicaciones() {
+	public List<ApAplicacionDatosEntity> listAplicaciones() {
 		return null;
 	}
 }

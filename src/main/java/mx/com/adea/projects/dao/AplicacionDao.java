@@ -1,7 +1,7 @@
 package mx.com.adea.projects.dao;
 
 import mx.com.adea.projects.beans.Greeting;
-import mx.com.adea.projects.pojos.MgmtAplicacionDatosEntity;
+import mx.com.adea.projects.pojos.ApAplicacionDatosEntity;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import java.util.List;
  */
 public interface AplicacionDao {
 
-	Greeting save(MgmtAplicacionDatosEntity mgmtAplicacionDatosEntity);
+	Greeting save(ApAplicacionDatosEntity mgmtAplicacionDatosEntity);
 
-	MgmtAplicacionDatosEntity getAplicacionById();
+	ApAplicacionDatosEntity getAplicacionById();
 
-	List<MgmtAplicacionDatosEntity> listAplicaciones();
+	List<ApAplicacionDatosEntity> listAplicaciones();
 
 }
