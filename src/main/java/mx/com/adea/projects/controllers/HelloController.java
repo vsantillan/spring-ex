@@ -62,6 +62,8 @@ public class HelloController {
 		Map<String, Greeting> map = new HashMap<>();
 
 		map.put("greeting", new Greeting(counter.incrementAndGet(), String.format(template, name)));
+		map.put("greeting2", new Greeting(counter.incrementAndGet(), String.format(template, name)));
+		map.put("greeting3", new Greeting(counter.incrementAndGet(), String.format(template, name)));
 
 		return map;
 	}
